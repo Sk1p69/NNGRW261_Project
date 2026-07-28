@@ -1,0 +1,140 @@
+const sqlite3 = require('sqlite3').verbose();
+const dbConfig = require('./db_config');
+
+const defaultKriteria = [
+    {
+        beskrywing: "Tegniese Uitvoering",
+        default_totaal: 10,
+        max_punte: 10,
+        gewig: 1.0,
+        merk_gids: `0-3: Basiese implementering met beduidende probleme
+4-6: Voldoende implementering met enkele probleme
+7-8: Goeie implementering met min probleme
+9-10: Uitstekende implementering met geen noemenswaardige probleme`
+    },
+    {
+        beskrywing: "Innovasie en Kreatiwiteit",
+        default_totaal: 10,
+        max_punte: 10,
+        gewig: 1.0,
+        merk_gids: `0-3: Min tot geen oorspronklike idees
+4-6: Enkele oorspronklike elemente
+7-8: Goeie oorspronklike benadering
+9-10: Uiters kreatiewe en innoverende oplossing`
+    },
+    {
+        beskrywing: "Gebruikersvriendelikheid",
+        default_totaal: 10,
+        max_punte: 10,
+        gewig: 1.0,
+        merk_gids: `0-3: Moeilik om te gebruik met swak koppelvlak
+4-6: Bruikbaar maar met verbeteringsareas
+7-8: Maklik om te gebruik met goeie koppelvlak
+9-10: Uitstekende gebruikerservaring en intuïtiewe koppelvlak`
+    },
+    {
+        beskrywing: "Dokumentasie en Kodegehalte",
+        default_totaal: 10,
+        max_punte: 10,
+        gewig: 1.0,
+        merk_gids: `0-3: Swak of geen dokumentasie, ongeorganiseerde kode
+4-6: Basiese dokumentasie, redelik georganiseerde kode
+7-8: Goeie dokumentasie, goed georganiseerde kode
+9-10: Uitstekende dokumentasie, hoogs georganiseerde en skoon kode`
+    }
+];
+
+function insertDefaultKriteria() {
+    return new Promise((resolve, reject) => {
+        const db = new sqlite3.Database(dbConfig.getDatabasePath(), (err) => {
+            if (err) {
+                console.error('Error opening database:', err);
+                return reject(err);
+            }
+        });
+
+        db.serialize(() => {
+            // Using serialize to ensure operations happen in order
+            db.serialize(() => {
+                // Create table if not exists
+                db.run(`CREATE TABLE IF NOT EXISTS Kriteria (
+                    kriteria_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    beskrywing TEXT NOT NULL,
+                    default_totaal INTEGER NOT NULL,
+                    max_punte INTEGER NOT NULL,
+                    gewig FLOAT NOT NULL DEFAULT 1.0,
+                    merk_gids TEXT
+                )`, (err) => {
+                    if (err) {
+                        console.error('Error ensuring Kriteria table exists:', err);
+                        return reject(err);
+                    }
+                });
+                
+                // Clear existing data
+                db.run('DELETE FROM Kriteria', (err) => {
+                    if (err) {
+                        console.error('Error clearing existing kriteria:', err);
+                        return reject(err);
+                    }
+                });
+
+                // Prepare and execute inserts
+                const stmt = db.prepare(`
+                    INSERT INTO Kriteria (beskrywing, default_totaal, max_punte, gewig, merk_gids)
+                    VALUES (?, ?, ?, ?, ?)
+                `);
+
+                // Insert each kriteria
+                defaultKriteria.forEach(k => {
+                    stmt.run(
+                        k.beskrywing,
+                        k.default_totaal,
+                        k.max_punte,
+                        k.gewig,
+                        k.merk_gids,
+                        (err) => {
+                            if (err) {
+                                console.error('Error inserting kriteria:', err);
+                                stmt.finalize();
+                                db.close();
+                                return reject(err);
+                            }
+                        }
+                    );
+                });
+
+                // Finalize statement and close database
+                stmt.finalize(err => {
+                    if (err) {
+                        console.error('Error finalizing statement:', err);
+                        db.close();
+                        return reject(err);
+                    }
+                    console.log('Successfully inserted default kriteria');
+                    db.close(err => {
+                        if (err) {
+                            console.error('Error closing database:', err);
+                            return reject(err);
+                        }
+                        resolve();
+                    });
+                });
+        });
+    });
+}
+
+// Run the insertion if this file is run directly
+if (require.main === module) {
+    insertDefaultKriteria()
+        .then(() => {
+            console.log('Default kriteria inserted successfully');
+            process.exit(0);
+        })
+        .catch(err => {
+            console.error('Error inserting default kriteria:', err);
+            process.exit(1);
+        });
+}
+
+module.exports = { insertDefaultKriteria };

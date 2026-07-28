@@ -1,0 +1,130 @@
+/* ===== Container Styles ===== */
+.merkadmin-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===== Form Styles ===== */
+.kriteria-form {
+  display: grid;
+  gap: 15px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ===== Table Styles ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th {
+  background: #0C2340;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f5f5f5;
+}
+
+/* ===== Button Styles ===== */
+.btn-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: bold;
+  color: white;
+}
+
+button[type="submit"],
+.btn-brown {
+  background-color: #8B572A;
+}
+
+.btn-navy {
+  background-color: #0C2340;
+}
+
+button[type="submit"]:hover,
+.btn-brown:hover {
+  background-color: #a16832;
+}
+
+.btn-navy:hover {
+  background-color: #163458;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Message Styles ===== */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+}

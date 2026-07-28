@@ -1,0 +1,222 @@
+.span-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 8px;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.team-header {
+  background:#0C2340 ;
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.team-logo {
+  flex-shrink: 0;
+}
+
+.team-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.team-info {
+  flex: 1;
+}
+
+.team-name {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-description {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.team-bio {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.members-section {
+  padding: 30px;
+  background: #f8f9fa;
+}
+
+.members-section h3 {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-bottom: 3px solid#0C2340;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.member-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.member-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.member-avatar {
+  flex-shrink: 0;
+}
+
+.member-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.default-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0C2340;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid #e0e0e0;
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  margin: 0 0 8px 0;
+  color: #555;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.member-bio {
+  margin: 0;
+  color: #0C2340;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .team-name {
+    font-size: 2rem;
+  }
+  
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .member-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .span-container {
+    padding: 10px;
+  }
+  
+  .team-header {
+    padding: 20px;
+  }
+  
+  .members-section {
+    padding: 20px;
+  }
+  
+  .team-name {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+/* ===== Button Base ===== */
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+/* ===== Specific Styles ===== */
+button[type="submit"] {
+  background-color: #8B572A; /* bruin soos "ENGLISH" */
+}
+
+button.btn-brown {
+  background-color: #8B572A; /* selfde bruin vir "Stoor" en "Wysig" */
+}
+
+button.btn-navy {
+  background-color: #0C2340; /* donkerblou soos "DOEN VANDAG AANSOEK" */
+}

@@ -1,0 +1,44 @@
+Om die projek op te stel volg volgende instruksies anders kyk na die volgende stel instruksies om dit te hardloop
+
+OPSTEL van projek
+-------------------------------------------
+1. Maak projek oop in VS code
+
+2. Maak CMD oop in die projek se folder moet iets soos (.../HA1)
+
+3. In die een CMD, loop die volgende instruksies
+	- npm install
+	- npm install express
+	- npm install cors
+	- npm install sqlite3
+	
+4. Verander directory na die react_gui
+	- cd react_gui
+	
+5. Hardloop die volgende om react te install
+	- npm install react react-dom
+	
+Die projek behoort dan reg opgestel word met al die nodige modules
+
+________________________________________________________________________________________
+
+STARTING van backend API
+
+1. Maak CMD oop in die projek se folder moet iets soos (.../HA1)
+
+2. In die een CMD, loop die volgende instruksie om by die backend se directory te kom
+	-cd express_agterend
+
+3. Om die API te start hardloop die volgende
+	- node index.js
+	
+________________________________________________________________________________________
+STARTING van react frontend
+
+1. Maak CMD oop in die projek se folder moet iets soos (.../HA1)
+
+2. In die een CMD, loop die volgende instruksie om by die backend se directory te kom
+	-cd react_gui/src
+
+3. Om die API te start hardloop die volgende
+	- npm start
