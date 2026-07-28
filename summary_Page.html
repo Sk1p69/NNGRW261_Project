@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jou Finansiële Opsomming</title>
+
+   <!-- Basic css file -->
+  <link rel="stylesheet" href="CSS_Files/basicLayout.css" />
+  <!-- Link CSS met html file -->
+  <link rel="stylesheet" href="CSS_Files/summary_Page.css" />
+   <!-- Link bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"/>
+
+</head>
+
+<body class="main">
+
+  <!--Basic nav bar-->
+  <nav id="mainNavbar" class="navbar navbar-primary navbar-expand-md py-0 fixed-top d-flex bd-highlight mb-3">
+
+    <a href="home_Page.html" class="navbar-brand">BUDGET</a>
+
+ <!-- Toggle navbar on smaller resolution -->
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="p-2 bd-highlight collapse navbar-collapse" id="navLinks">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="home_Page.html" class="nav-link">TUIS</a>
+      </li>
+      <li class="nav-item">
+        <a href="about_Page.html" class="nav-link">OOR ONS</a>
+      </li>
+      <li class="nav-item">
+        <a href="contact_Page.html" class="nav-link">KONTAK</a>
+      </li>
+      <li class="nav-item">
+        <a href="HoeWerkBudget_Page.html" class="nav-link">HOE WERK ONS</a>
+      </li>
+      <li class="nav-item">
+        <a href="dashboard_Page.html" class="nav-link">BEHEERPANEEL</a>
+      </li>
+       <li class="nav-item">
+            <a href="transaction_Page.html" class="nav-link">TRANSAKSIES</a>
+        </li>
+    </ul>
+  
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="login_Page.html" class="nav-link">TEKEN IN</a>
+      </li>
+      <li class="nav-item">
+        <a href="register_Page.html" class="nav-link">REGISTREER</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+
+  <div class="container my-5 pt-5">
+    <h2 class="text-center mb-4">Jou Finansiële Opsomming</h2>
+
+    <!-- Groot totale -->
+    <div class="row text-center mb-4" id="summaryCards">
+
+      <div class="col-md-4">
+        <div class="card bg-light">
+
+          <div class="card-body">
+
+            <h5 class="card-title">Totale Inkomste</h5>
+            <p class="card-text" id="inkTotaal">R </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="card bg-light">
+
+          <div class="card-body">
+
+            <h5 class="card-title">Totale Uitgawes</h5>
+            <p class="card-text" id="uitTotaal">R </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="card bg-light">
+
+          <div class="card-body">
+
+            <h5 class="card-title">Spaar Tot Nou</h5>
+            <p class="card-text" id="vordering">R </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Grafieke -->
+    <div class="graphs row">
+     
+      <div class="card mb-4 col-5 col-sm-12">
+        <!-- inkomste en uitgawe oor tyd -->
+        <div class="card-header">
+          <h3>Inkomste Oor Tyd</h3>
+        </div>
+        
+
+        <div class="card-body">
+
+          <canvas id="lynGrafiek"></canvas>
+
+        </div>
+
+      </div>
+      <!-- word gebruik om spasie tussen die cards te voeg -->
+      <div class="col-2"></div>
+
+      <div class="card mb-4 col-5 col-sm-12">
+        <!-- uitgawes volgens kategorie -->
+        <div class="card-header"><h3>Uitgawes per Kategorie</h3></div>
+        
+        <div class="card-body">
+
+          <canvas id="sirkelGrafiek"></canvas>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Onlangse transaksies -->
+    <div class="card mb-4">
+
+      <div class="card-header">
+        <h3>Onlangse Transaksies</h3>
+      </div>
+
+      <div class="card-body">
+
+        <table class="table table-striped">
+
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Beskrywing</th>
+              <th>Kategorie</th>
+              <th>Bedrag</th>
+            </tr>
+          </thead>
+
+          <tbody id="transaksieTab">
+            <!-- transaksies wat ingesit word deur js -->
+          </tbody>
+
+        </table>
+
+      </div>
+    </div>
+
+    <!-- Spaar doele -->
+    <div class="card mb-4">
+
+      <div class="card-header">
+        <h3>Spaar Doele</h3>
+      </div>
+
+      <table class="table table-striped">
+
+          <thead>
+             <tr>
+                <th>Doel</th>
+                <th>Teiken Bedrag</th>
+                <th>Bedrag Gespaar</th>
+                <th>Vordering</th>
+            </tr>
+          </thead>
+
+          <tbody id="doelTabelBody">
+            <!-- transaksies wat ingesit word deur js -->
+          </tbody>
+
+        </table>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+ <!-- Footer -->
+  <footer class="container-fluid text-center py-4 ">
+    <p>&copy; 2025 Budget. Alle regte Voorbehou</p>
+    <p>
+        <a href="#">Privaatheidsbeleid</a> | 
+        <a href="#">Diensvoorwaardes</a>
+    </p>
+    <p>Kontak ons: <a href="mailto:ondersteuning@budget.com">ondersteuning@budget.com</a></p>
+  </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Navbar script as user scroll-->
+    <script src="scripts/navbar_Script.js"></script>
+    <!-- NavBar scripts as user toggler activate -->
+    <script src="scripts/navBarToggle_Scripts.js"></script>
+    <!-- Script om grafieke te kan invoeg -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+  <script src="scripts/summary.js"></script>
+  
+</body>
+</html>

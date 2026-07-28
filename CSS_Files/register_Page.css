@@ -1,0 +1,45 @@
+
+
+/* Padding op die html body */
+#mainBody{
+    padding-top: 60px;
+}
+
+/* Styl die hoof section van die registrasie blad */
+.registrasie{
+    justify-self: center;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    max-width: 60%;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    
+}
+.registrasie .mainHead{
+    text-align: center;
+    justify-self: center;
+    margin-bottom: 30px;
+}
+
+/* @media style om die hoof section se wydte te bepaal */
+@media (max-width: 	540px){
+    .registrasie{
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 720px){
+    .registrasie{
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 960px){
+    .registrasie{
+        width: 95%;
+    }
+
+}

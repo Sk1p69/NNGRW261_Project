@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transaksies</title>
+  <!-- Basic css file -->
+    <link rel="stylesheet" href="CSS_Files/basicLayout.css">
+    <!-- Link CSS met html file -->
+    <link rel="stylesheet" href="CSS_Files/transaction_Page.css">
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body class="main">
+
+<!--Basic nav bar-->
+  <nav id="mainNavbar" class="navbar navbar-primary navbar-expand-md py-0 fixed-top d-flex bd-highlight mb-3">
+
+    <a href="home_Page.html" class="navbar-brand">BUDGET</a>
+
+ <!-- Toggle navbar op kleiner resolution -->
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="p-2 bd-highlight collapse navbar-collapse" id="navLinks">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="home_Page.html" class="nav-link">TUIS</a>
+      </li>
+      <li class="nav-item">
+        <a href="about_Page.html" class="nav-link">OOR ONS</a>
+      </li>
+      <li class="nav-item">
+        <a href="contact_Page.html" class="nav-link">KONTAK</a>
+      </li>
+      <li class="nav-item">
+        <a href="HoeWerkBudget_Page.html" class="nav-link">HOE WERK ONS</a>
+      </li>
+      <li class="nav-item">
+        <a href="dashboard_Page.html" class="nav-link">BEHEERPANEEL</a>
+      </li>
+       <li class="nav-item">
+            <a href="summary_Page.html" class="nav-link">OPSOMMING</a>
+        </li>
+    </ul>
+  
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="login_Page.html" class="nav-link">TEKEN IN</a>
+      </li>
+      <li class="nav-item">
+        <a href="register_Page.html" class="nav-link">REGISTREER</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+
+
+
+  <section class="container">
+
+  <h1 class="mb-4">Bestuur Transaksies</h1>
+
+    <div class="row">
+      <!-- voeg inkomste by  -->
+
+      <div class="col-md-6">
+
+        <h3>Inkomste</h3>
+
+        <form id="inkForm" class="mb-4">
+
+          <div class="form-row">
+
+            <input type="date" class="form-control col" required id="inkDatum">
+            <input type="text" class="form-control col" placeholder="Beskrywing" required id="inkBeskrywing">
+            
+            <!-- lys van inkomste kategoriee -->
+            <select class="form-control col" required id="inkKategorie">
+
+              <option value="">Kies Kategorie</option>
+              <option value="Salaris">Salaris</option>
+              <option value="Bonus">Bonus</option>
+              <option value="Belegging">Belegging</option>
+              <option value="Ander">Ander</option>
+
+            </select>
+
+            <input type="number" class="form-control col" placeholder="Bedrag (R)" required id="inkBedrag">
+            <button type="submit" class="btn btn-success col-2">Voeg By</button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- voeg uitgawes by -->
+      <div class="col-md-6">
+
+        <h3>Uitgawes</h3>
+        <form id="uitForm" class="mb-4">
+
+          <div class="form-row">
+            <input type="date" class="form-control col" required id="uitDatum">
+            <input type="text" class="form-control col" placeholder="Beskrywing" required id="uitBeskrywing">
+            
+            <!-- lys van uitgawes kategoriee  -->
+            <select class="form-control col" required id="uitKategorie">
+              <option value="">Kies Kategorie</option>
+              <option value="Huur">Huur</option>
+              <option value="Kos">Kos</option>
+              <option value="Vervoer">Vervoer</option>
+              <option value="Vermaak">Vermaak</option>
+              <option value="Medies">Medies</option>
+              <option value="Ander">Ander</option>
+            </select>
+
+            <input type="number" class="form-control col" placeholder="Bedrag (R)" required id="uitBedrag">
+            <button type="submit" class="btn btn-danger col-2">Voeg By</button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  <!-- tabel van alle transakseis -->
+  <table class="table">
+
+    <thead>
+
+      <tr>
+        <th>Datum</th>
+        <th>Beskrywing</th>
+        <th>Kategorie</th>
+        <th>Bedrag</th>
+        <th>Verwyder</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+      <!-- js sal transaksies byvoeg -->
+    </tbody>
+
+  </table>
+
+<hr>
+
+  <!-- Opdateer doele -->
+<h2>Doele Aanpassing</h2>
+
+<form id="DoelForm" class="form-inline mb-3">
+
+  <select class="form-control mr-2" id="doelSleutel">
+    <option value="noodFonds">Noodfonds</option>
+    <option value="vakansie">Vakansie</option>
+    <option value="karDeposito">Kar Deposito</option>
+    <option value="anderDoel">Ander</option>
+  </select>
+
+  <input type="number" class="form-control mr-2" placeholder="Nuwe Teikenbedrag" id="doelTeikein" required>
+  <input type="number" class="form-control mr-2" placeholder="Bedrag Gespaar" id="doelGespaar" required>
+  <button type="submit" class="btn btn-primary">Stel Doel</button>
+
+</form>
+
+<!-- tabel om doele te wys -->
+<table class="table table-bordered mb-5">
+
+  <thead>
+
+    <tr>
+      <th>Doel</th>
+      <th>Teikenbedrag (R)</th>
+      <th>Bedrag Gespaar (R)</th>
+      <th>Verwyder</th>
+    </tr>
+
+  </thead>
+
+  <tbody id="doelTabelBody">
+
+  </tbody>
+
+</table>
+
+<hr>
+
+<h2>Projeksie Invoer</h2>
+
+<form id="projekForm" class="form-inline mb-3">
+
+  <input type="month" class="form-control mr-2" id="projekMaand" required>
+  <input type="number" class="form-control mr-2" placeholder="Inkomste" id="projekInk" required>
+  <input type="number" class="form-control mr-2" placeholder="Uitgawe" id="projekUit" required>
+  <button type="submit" class="btn btn-success">Voeg Projeksie By</button>
+
+</form>
+
+<!-- tabel om projekteerde staat te wys -->
+<table class="table table-bordered">
+
+  <thead>
+
+    <tr>
+      <th>Maand</th>
+      <th>Geprojekteerde Inkomste</th>
+      <th>Geprojekteerde Uitgawe</th>
+      <th>Geprojekteerde Balans</th>
+      <th>Verwyder</th>
+    </tr>
+
+  </thead>
+
+  <tbody id="projekTabelBody">
+
+  </tbody>
+</table>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="container-fluid text-center py-4 ">
+    <p>&copy; 2025 Budget. Alle regte Voorbehou</p>
+    <p>
+        <a href="#">Privaatheidsbeleid</a> | 
+        <a href="#">Diensvoorwaardes</a>
+    </p>
+    <p>Kontak ons: <a href="mailto:ondersteuning@budget.com">ondersteuning@budget.com</a></p>
+  </footer>
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Navbar script as user scroll-->
+    <script src="scripts/navbar_Script.js"></script>
+    <!-- NavBar scripts as user toggler activate -->
+     <script src="scripts/navBarToggle_Scripts.js"></script>
+
+     <script src="scripts/data.js"></script>
+
+</body>
+</html>

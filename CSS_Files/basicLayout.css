@@ -1,0 +1,58 @@
+/* Basiese navbar style reg deur */
+
+#mainNavbar.active {
+    background-color: rgba(25,39,64, 0.8);  
+}
+#mainNavbar.active ul li a {
+    color: whitesmoke;
+}
+
+.navbar.scrolled{
+    background: #85AED0;
+    transition: background 500ms;
+}
+
+.navbar a{
+    color: #192740;
+}
+
+/* Skep agtergrond van navbar */
+.navbar{
+    background-color: whitesmoke;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(25,39,64, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Basiese style op content */
+#content{
+    padding-top: 4rem;
+    z-index: -1;
+}
+
+.main{
+    background-color: #B8D1E0;
+}
+
+section{
+    padding-top: 2rem
+    
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fc;
+    color: #192740;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basiese style op footer */
+footer{
+    background-color:#192740;
+    color: whitesmoke;
+    margin-top: auto;
+}
+

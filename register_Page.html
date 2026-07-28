@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTARSIE</title>
+     <!-- Basic css file -->
+     <link rel="stylesheet" href="CSS_Files/basicLayout.css">
+     <!-- Link CSS file -->
+     <link rel="stylesheet" href="CSS_Files/register_Page.css">
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body class="main">
+
+<!--Basic nav bar-->
+<nav id= "mainNavbar" class="d-flex bd-highlight mb-3 navbar navbar-primary navbar-expand-md py-0 fixed-top">
+  <a href="home_Page.html" class="navbar-brand">BUDGET</a>
+  
+  <!-- Toggle navbar on smaller resolution -->
+  
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+  
+    <span class="navbar-toggler-icon "></span>
+    
+  </button>
+  
+  <div class="p-2 bd-highlight collapse navbar-collapse" id="navLinks">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="home_Page.html" class="nav-link">TUIS</a>
+      </li>
+      <li class="nav-item">
+        <a href="about_Page.html" class="nav-link">OOR ONS</a>
+      </li>
+      <li class="nav-item">
+        <a href="contact_Page.html" class="nav-link">KONTAK</a>
+      </li>
+      <li class="nav-item">
+        <a href="HoeWerkBudget_Page.html" class="nav-link">HOE WERK ONS</a>
+      </li>
+      <li class="nav-item protected" style="display: none;">
+        <a href="dashboard_Page.html" class="nav-link">BEHEERPANEEL</a>
+      </li>
+      <li class="nav-item protected" style="display: none;">
+        <a href="summary_Page.html" class="nav-link">OPSOMMING</a>
+      </li>
+      <li class="nav-item protected" style="display: none;">
+            <a href="transaction_Page.html" class="nav-link">TRANSAKSIES</a>
+      </li>
+    </ul>
+  
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="login_Page.html" class="nav-link">TEKEN IN</a>
+      </li>
+      <li class="nav-item">
+        <a href="register_Page.html" class="nav-link">REGISTREER</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+    
+  <section class="registrasie">
+    <div id="mainBody" class="container row-5">
+
+      <div class="col-md-11">
+
+        <div class="mainHead">
+          <h2>WELKOM NA BUDGET</h2>
+
+          <h6>Nuut aan BUDGET? Skep n profiel nou!</h6>
+
+      </div>
+
+      <div>
+
+        <h2>Registrasie</h2>
+
+        <p>Kom ons verbeter u se toekoms.</p>
+
+        <!-- Registrasie vorm om in te vul -->
+
+        <form>
+
+          <div>
+            <label for="firstNameIn">Eerste Naam</label>   
+            <input type="text" class="form-control" required>
+          </div>
+
+          <div>
+            <label for="lastNameIn">Van</label>
+            <input type="text" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="emailInput">Email adres</label>
+            <input type="email" class="form-control" id="emailIn" aria-describedby="emailHelp" required>
+            <small id="emailHelp" class="form-text text-muted">Jou finansies, ons doelwit.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="dobInput">Geboortedatum</label>
+            <input type="date" class="form-control" id="dobInput" required>
+          </div>
+
+          <div class="form-group">
+              <label for="passwordInput">Wagwoord</label>
+              <input type="password" class="form-control" id="pwInput" required>
+          </div>
+
+          <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="keepLogin" required>
+              <label class="form-check-label" for="keepLogin">Hou my aangemeld</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submitBTN">Registreer</button>
+
+        </form>
+
+        <div>
+            <small>Deur n profiel te skep, stem u saam om emails van BUDGET af te ontvang. Sien ons <a href="#">Diensvoorwaardes en Privaatheidsbeleid</a> vir meer inligting</small>
+        </div>
+
+      </div>
+      </div>
+  </div>
+  </section>
+
+<!-- Footer -->
+  <footer class="container-fluid text-center py-4 ">
+    <p>&copy; 2025 Budget. Alle regte Voorbehou</p>
+    <p>
+        <a href="#">Privaatheidsbeleid</a> | 
+        <a href="#">Diensvoorwaardes</a>
+    </p>
+    <p>Kontak ons: <a href="mailto:ondersteuning@budget.com">ondersteuning@budget.com</a></p>
+  </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Navbar script as user scroll-->
+    <script src="scripts/navbar_Script.js"></script>
+    <!-- NavBar scripts as user toggler activate -->
+     <script src="scripts/navBarToggle_Scripts.js"></script>
+    <!-- registreer js -->
+     <script src="scripts/register.js"></script>
+</body>
+</html>

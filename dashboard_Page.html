@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beheerpaneel</title>
+    <!-- Basic css file -->
+    <link rel="stylesheet" href="CSS_Files/basicLayout.css">
+    <!-- Link CSS met html file -->
+    <link rel="stylesheet" href="CSS_Files/dashboard_Page.css">
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body class="main">
+
+    <!--Basic nav bar-->
+    <nav id= "mainNavbar" class="d-flex bd-highlight mb-3 navbar navbar-primary navbar-expand-md py-0 fixed-top">
+    <a href="home_Page.html" class="navbar-brand">BUDGET</a>
+    
+    <!-- Toggle navbar op kleiner resolution -->
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+    
+      <span class="navbar-toggler-icon "></span>
+      
+    </button>
+    
+    <div class="p-2 bd-highlight collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="home_Page.html" class="nav-link">TUIS</a>
+        </li>
+        <li class="nav-item">
+          <a href="about_Page.html" class="nav-link">OOR ONS</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact_Page.html" class="nav-link">KONTAK</a>
+        </li>
+        <li class="nav-item">
+            <a href="HoeWerkBudget_Page.html" class="nav-link">HOE WERK ONS</a>
+          </li>
+        <li class="nav-item">
+            <a href="summary_Page.html" class="nav-link">OPSOMMING</a>
+        </li>
+         <li class="nav-item">
+            <a href="transaction_Page.html" class="nav-link">TRANSAKSIES</a>
+        </li>
+      </ul>
+    
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="login_Page.html" class="nav-link">TEKEN IN</a>
+        </li>
+        <li class="nav-item">
+          <a href="register_Page.html" class="nav-link">REGISTREER</a>
+        </li>
+      </ul>
+    </div>
+    </nav>   
+    
+    
+    <section class="container">
+
+    <h1>Beheerpaneel</h1>
+
+    <!-- Oorsig van rekening -->
+    
+    <section class="overview row">
+
+        <div class="col-lg-4 col-md-5 col-sm-5">
+
+            <h3>Inkomste teenoor Uitgawes</h3>
+
+            <table>
+
+                <tr>
+                    <td>Inkomste</td>
+                    <td id="inkTotaal">R </td>
+                </tr>
+
+                <tr>
+                    <td>Uitgawes</td>
+                    <td id="uitTotaal">R </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="col-lg-4 col-md-5 col-sm-5">
+
+            <h3>Maandlike begrotings vordering</h3>
+
+            <p id="persentInkGebruik"></p>
+
+            <div class="progress-bar" >
+
+                <span id="spanColor"></span>
+                
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-5">
+
+            <h3>Netto waarde</h3>
+            <p id="nettoWaarde">R </p>
+
+        </div>
+
+    </section>
+
+    <!-- Onlangse Transaksies deel -->
+    <h2>Onlangse Transaksies</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Datum</th>
+                <th>Beskrywing</th>
+                <th>Kategorie</th>
+                <th>Bedrag</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="transaksieTab">
+        <!-- gebruiker sal die byvoeg en deur js opgedateer word -->
+           
+        </tbody>
+
+    </table>
+
+    <!--Finasiele Doele vordering deel -->
+    <h2>Finasiele Doele</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Doel</th>
+                <th>Teiken Bedrag</th>
+                <th>Bedrag Gespaar</th>
+                <th>Vordering</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="doelTabelBody">
+            <!-- gebruiker sal die byvoeg en deur js opgedateer word -->
+
+        </tbody>
+
+    </table>
+
+    <h2>Geprojekteerde Kontankvloei</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Maand</th>
+                <th>Geprojekteerde Inkomste</th>
+                <th>Geprojekteerde Uitgawe</th>
+                <th>Geprojekteerde Balans</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="projekTabelBody">
+            <!-- gebruiker sal die byvoeg en deur js opgedateer word -->
+
+
+        </tbody>
+
+    </table>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid text-center py-4 ">
+    <p>&copy; 2025 Budget. Alle regte Voorbehou</p>
+    <p>
+        <a href="#">Privaatheidsbeleid</a> | 
+        <a href="#">Diensvoorwaardes</a>
+    </p>
+    <p>Kontak ons: <a href="mailto:ondersteuning@budget.com">ondersteuning@budget.com</a></p>
+    </footer>
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Navbar script as user scroll-->
+    <script src="scripts/navbar_Script.js"></script>
+    <!-- NavBar scripts as user toggler activate -->
+     <script src="scripts/navBarToggle_Scripts.js"></script>
+    
+     <script src="scripts/dashboard.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* stel padding op die section  */
+.content-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    color: #333;
+}
+
+/* stel padding op die hoof opskrif  */
+
+.content-section h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4B6D90;
+}
+
+/* stel padding op die sub opskrifte  */
+
+.content-section h3 {
+    margin-top: 20px;
+    font-weight: 500;
+    color: #4B6D90;
+}
+/* stel doe font grote en lyn hoogte van die teks binne die paragrawe */
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* stel img se grote en maak seker hulle nie overflow nie */
+.img-fluid {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+/* stel die laaste img groter as die res sodat betjie meer detail gesien kan word */
+.dashboard{
+    max-height: 350px;
+}

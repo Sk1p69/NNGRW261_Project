@@ -1,0 +1,43 @@
+/* Styl die hoof section van die inteken blad */
+.login {
+    width: 50%;
+    padding: 40px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    max-width: 600px;
+    border-radius: 15px;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ddd; 
+    text-align: center;
+    justify-self: center;
+}
+
+/* @media style om die hoof section se wydte te bepaal */
+@media (max-width: 	540px){
+    .login{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 720px){
+    .login{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 960px){
+    .login{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 1300px){
+    .login{
+        width: 70%;
+    }
+
+}

@@ -1,0 +1,85 @@
+/* Stel al die opskrifte in die middle */
+h1, h2 {
+    text-align: center;
+    color: black;
+    background-color: #85AED0;
+    border-radius: 15px;
+    margin: 0 ;
+    padding: 10px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table, th, td {
+    border: 1px solid #192740;
+}
+
+/* Skyf die teks in die tabel na die linker kant */
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #85AED0;
+}
+
+td{
+    background-color: whitesmoke;
+}
+
+.overview {
+    margin-bottom: 30px;
+}
+
+.overview div{
+    background-color: whitesmoke;
+    margin: 10px;
+    border: 1px solid #192740 ;
+    text-align: center;
+}
+
+.overview table,th, td{
+     border-left: none;
+    border-right: none;
+}
+.progress-bar {
+    width: 98%;
+    height: 20px;
+    background-color: #ddd;
+    overflow: hidden; 
+    margin: auto; 
+}
+
+.progress-bar span {
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.green { 
+    background-color: green; 
+}
+
+.yellow { 
+    background-color: yellow; 
+}
+
+.red { 
+    background-color: red;
+}
+
+#nettoWaarde{
+    font-size: x-large;
+}

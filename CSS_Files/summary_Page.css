@@ -1,0 +1,36 @@
+.card-body {
+  position: relative;
+  height: 100%;
+}
+
+.card-body #incomeChart {
+  width: 80% ;
+  height: 80% ;
+}
+
+.card-body #expenseChart {
+  width: 65% ;
+  height: 75% ;
+}
+
+@media (max-width: 640px)
+{
+  .card-body #expenseChart {
+  width: 80% ;
+  height: 90% ;
+}  
+}
+@media (max-width: 900px)
+{
+  .card-body #expenseChart {
+  width: 75% ;
+  height: 85%;
+}  
+}
+@media (max-width: 1100px)
+{
+  .card-body #expenseChart {
+  width: 70% ;
+  height: 80% ;
+}  
+}

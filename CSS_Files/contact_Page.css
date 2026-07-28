@@ -1,0 +1,39 @@
+/* Sit padding op h1 in die section */
+section h1{
+    padding: 50px 30px 10px 10px
+}
+/* Sit padding op h2 in die section */
+section h2{
+    padding: 10px 10px;
+}
+/* styl die hoof deel van die kontak blad */
+section #contact {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* styl die submit knoppie vir die kontak vorm */
+.subButton{
+    background-color: #4B6D90;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 1px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+/* Styl die knoppie as user oor dit hover */
+.subButton:hover{
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #192740;
+}
+
+.subForm{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}

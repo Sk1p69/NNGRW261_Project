@@ -1,0 +1,14 @@
+table,th,tr,thead,tbody{
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1,h2,h3{
+    padding: 15px;
+    margin: 15px;
+}
+
+h1{
+    padding-top: 30px;
+}
